@@ -1064,10 +1064,14 @@ body {
   padding: 16px 0;
 }
 
-/* Footer fijo abajo */
+/* Sticky footer para CTA en el modal de filtros */
 .filters-footer {
-  padding-top: 16px;
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  padding: 16px;
   border-top: 1px solid #dee2e6;
+  z-index: 10; /* Asegura que quede sobre el contenido scrollable */
 }
 
 .apply-filters {
