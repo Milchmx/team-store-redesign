@@ -1061,7 +1061,8 @@ body {
 .filters-body {
   flex: 1 1 auto;
   overflow-y: auto;
-  padding: 16px 0;
+  padding: 16px 0 96px; /* ← deja espacio para el botón fijo */
+  -webkit-overflow-scrolling: touch; /* ← mejora el scroll en iOS */
 }
 
 /* Sticky footer para CTA en el modal de filtros */
@@ -1071,7 +1072,7 @@ body {
   background-color: #fff;
   padding: 16px;
   border-top: 1px solid #dee2e6;
-  z-index: 10; /* Asegura que quede sobre el contenido scrollable */
+  z-index: 10;
 }
 
 .apply-filters {
