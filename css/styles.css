@@ -1024,7 +1024,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 100dvh; /* ✅ Usa 100dvh en vez de 100% */
   padding: 16px;
   box-sizing: border-box;
 }
