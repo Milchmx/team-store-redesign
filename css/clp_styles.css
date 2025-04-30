@@ -603,6 +603,11 @@ body {
     display: none;                /* Chrome, Safari, Edge */
   }
 
+  .card-slider.no-scroll {
+    justify-content: center;
+    overflow-x: hidden; /* evita que siga apareciendo el scrollbar innecesariamente */
+  } 
+
   /* ===== tarjeta individual ===== */
   .card-item {
     flex: 0 0 auto;
