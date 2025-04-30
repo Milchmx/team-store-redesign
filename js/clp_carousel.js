@@ -26,3 +26,26 @@ function updateThumb() {
 slider.addEventListener("scroll", updateThumb); // en scroll
 window.addEventListener("resize", updateThumb); // en resize
 window.addEventListener("load", updateThumb);   // al cargar la página
+
+// Detectar tamaño del contenido
+function checkOverflowAndUpdateLayout() {
+  const hasHorizontalScroll = slider.scrollWidth > slider.clientWidth;
+
+  if (!hasHorizontalScroll) {
+    slider.classList.add("no-scroll");
+    track.parentElement.style.display = "none"; // oculta scrollbar-wrapper
+  } else {
+    slider.classList.remove("no-scroll");
+    track.parentElement.style.display = "flex";
+  }
+}
+
+// Actualiza en carga, resize y cuando se agregan productos
+window.addEventListener("load", () => {
+  updateThumb();
+  checkOverflowAndUpdateLayout();
+});
+window.addEventListener("resize", () => {
+  updateThumb();
+  checkOverflowAndUpdateLayout();
+});
