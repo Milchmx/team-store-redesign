@@ -1,9 +1,9 @@
 // plp.tabs.js
 // Manejo de tabs para filtrar productos por subcategoría y scroll visual
 
-import { applySelectedFilters, renderDynamicFilters } from './js/plp.filters.js';
-import { visibleCardsByCategory, showNextBatch } from './js/plp.grid.js'
-import { renderProductSwatches } from './js/plp.swatches.js';
+import { applySelectedFilters, renderDynamicFilters } from './plp.filters.js';
+import { visibleCardsByCategory, showNextBatch } from './plp.grid.js'
+import { renderProductSwatches } from './plp.swatches.js';
 
 
 export function filterProductsByTab(category) {
