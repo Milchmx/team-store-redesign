@@ -2,8 +2,8 @@
 // Lógica de filtros: estado, render dinámico, aplicación
 console.log("🟢 plp.filters.js cargado correctamente");
 
-import { visibleCardsByCategory, showNextBatch } from '.js/plp.grid.js';
-import { renderProductSwatches } from '.js/plp.swatches.js';
+import { visibleCardsByCategory, showNextBatch } from './js/plp.grid.js';
+import { renderProductSwatches } from './js/plp.swatches.js';
 
 
 // Utilidad global para distinguir modo desktop
