@@ -1,5 +1,4 @@
 /* ===== ESTILOS BASE ===== */
-
 body {
     margin: 0;
     padding: 0;
@@ -61,8 +60,7 @@ body {
   }
   
   
-  /* ===== BREADCRUMBS ===== */
-  
+/* ===== BREADCRUMBS ===== */
   .breadcrumbs-container {
     display: flex;
     align-items: center;
@@ -160,8 +158,7 @@ body {
   }
   
   
-  /* ===== Category Header (h1) ===== */
-  
+/* ===== Category Header (h1) ===== */
   .category-header {
     display: flex;
     align-items: center;
@@ -219,8 +216,7 @@ body {
   }
   
   
-  /* ===== Subcategory Carousel ===== */
-  
+/* ===== Subcategory Carousel ===== */
   .subcategory-carousel {
     padding: 8px;
     width: 100%;
@@ -257,7 +253,6 @@ body {
   
   
 /* ===== PLP Tools: SEO Accordion + Results & Filters ===== */
-
 .plp-tools {
     display: flex;
     flex-wrap: wrap;
@@ -294,8 +289,7 @@ body {
     }
   }
   
-  /* ===== Collapsible SEO Accordion ===== */
-
+/* ===== Collapsible SEO Accordion ===== */
 .collapsible {
     flex: 1 0 0;
     min-width: 300px;
@@ -391,8 +385,7 @@ body {
     color: #212529;
   }
   
-  /* ===== Results & Filters ===== */
-
+/* ===== Results & Filters ===== */
 .results-and-filters {
     display: flex;
     align-items: center;
@@ -575,8 +568,8 @@ body {
     left: 0;
     transition: left 0.2s ease;
   }
-/* ===== Tabs (Subcategorías) ===== */
 
+/* ===== Tabs (Subcategorías) ===== */
 .tab {
     display: flex;
     align-items: center;
@@ -618,7 +611,7 @@ body {
     border: 1px solid #00297C; /* Asegura que el borde sea consistente */
   }
 
-  /* ========== PRODUCT GRID CONTAINER ========== */
+/* ========== PRODUCT GRID CONTAINER ========== */
 .product-grid-container {
   display: flex;
   flex-direction: column;
@@ -630,7 +623,7 @@ body {
   gap: 16px;
 }
 
-@media (min-width: 577px) {
+@media (min-width: 576px) {
   .product-grid-container {
     padding-left: 8px;
     padding-right: 8px;
@@ -638,91 +631,87 @@ body {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .product-grid-container {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 8px;
+    padding-right: 8px;
     gap: 24px;
   }
 }
 
-@media (min-width: 993px) {
+@media (min-width: 992px) {
+  .product-grid-container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
   .product-grid-container {
     padding-left: 48px;
     padding-right: 48px;
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1400px) {
   .product-grid-container {
     padding-left: 64px;
     padding-right: 64px;
   }
 }
 
-/* ========== PRODUCT GRID ========== */
+/* ========== PRODUCT GRID (Nueva versión con grid) ========== */
 .product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 0 24px 0; /* ← bottom padding agregado */
-  align-items: flex-start;
-  align-content: flex-start;
-  align-self: stretch;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* sm: 2 por fila */
+  gap: 16px;
+  padding: 0 0 24px 0;
   width: 100%;
-  height: auto;
-  gap: 16px; /* default gutter: sm & md */
+  box-sizing: border-box;
 }
 
-@media (min-width: 769px) {
+/* md: 4 columnas */
+@media (min-width: 577px) and (max-width: 767px) {
   .product-grid {
-    gap: 24px; /* gutter en lg, xl, xxl */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
   }
 }
 
-/* Cuando el filtro lateral está visible */
-.product-grid.filters-visible-lg {
-  width: calc(100% * 9 / 12); /* 9 columnas */
+/* lg: 4 columnas (sidebar visible o no) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
 }
-.product-grid.filters-visible-xl {
-  width: calc(100% * 10 / 12); /* 10 columnas */
+
+/* xl: default sin sidebar (6 columnas) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .product-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+  }
+}
+
+/* xxl: 6 columnas */
+@media (min-width: 1400px) {
+  .product-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+  }
 }
 
 /* ========== PRODUCT CARD ========== */
-/* sm: 2 de 4 columnas (2 por fila) */
+/* ✅ Compatible con CSS Grid layout y visual completo */
+
 .product-card {
-  flex: 0 0 calc((100% - 1 * 16px) / 2);
-  max-width: calc((100% - 1 * 16px) / 2);
+  /* Layout externo */
+  width: 100%;
   box-sizing: border-box;
   cursor: pointer;
-}
 
-/* md: 2 de 8 columnas (4 por fila) */
-@media (min-width: 577px) and (max-width: 767px) {
-  .product-card {
-    flex: 0 0 calc((100% - 3 * 16px) / 4);
-    max-width: calc((100% - 3 * 16px) / 4);
-  }
-}
-
-/* lg: 3 de 12 columnas (4 por fila) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .product-card {
-    flex: 0 0 calc((100% - 3 * 24px) / 4);
-    max-width: calc((100% - 3 * 24px) / 4);
-  }
-}
-
-/* xl & xxl: 2 de 12 columnas (6 por fila) */
-@media (min-width: 1200px) {
-  .product-card {
-    flex: 0 0 calc((100% - 5 * 24px) / 6);
-    max-width: calc((100% - 5 * 24px) / 6);
-  }
-}
-
-
-/* ========== PRODUCT CARD ========== */
-.product-card {
+  /* Estilo interno */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -731,10 +720,8 @@ body {
   background: #FFFFFF;
   box-shadow: 0px 0px 4px 0px rgba(153, 155, 156, 0.5);
   transition: border 0.2s ease;
-  box-sizing: border-box;
-  width: 100%; /* se adapta al layout de columnas */
   min-width: 144px;
-  height: auto; /* ← clave: altura dinámica */
+  height: auto;
   border: 2px solid transparent;
 }
 
@@ -806,7 +793,7 @@ body {
 }
 
 /* ========== COLUMN 1 ========== */
-.product-card-column {
+.product-info-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -845,7 +832,6 @@ body {
 }
 
 /* === PRODUCT SWATCH COMPONENT === */
-
 .product-swatch {
   display: flex;
   flex-direction: row; /* Asegura disposición horizontal */
@@ -956,10 +942,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-self: stretch;
   gap: 0;
   padding: 0 32px 24px 32px;
   width: 100%;
+  grid-column: 1 / -1;
   box-sizing: border-box;
 }
 
@@ -972,8 +958,8 @@ body {
   height: 40px;
   padding: 8px 16px;
   border-radius: 8px;
-  background: #0056D2; /* Button-Primary-Background-Default */
-  color: #FFFFFF; /* Light-Button-Primary-Text-Default */
+  background: #0056D2;
+  color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -982,21 +968,30 @@ body {
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+  box-shadow: 0px 1px 6px 0px var(--Shadow-Transparency, rgba(153, 155, 156, 0.50));
 }
 
-/* Hover State */
 .see-more-button:hover {
-  background: #003DA6; /* Button-Primary-Background-Hover */
+  background: #003DA6;
+  box-shadow: 0px 1px 6px 0px var(--Shadow-Transparency, rgba(153, 155, 156, 0.50));
 }
 
-/* Active State */
 .see-more-button:active {
-  background: #00297C; /* Button-Primary-Background-Active */
+  background: #00297C;
+  box-shadow: none;
+}
+
+.see-more-button:disabled {
+  background: #6C757D;
+  color: #D9E2E9;
+  box-shadow: none;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* ===== MODAL DE FILTROS ===== */
-
 .filters-modal {
   position: fixed;
   top: 0;
@@ -1061,20 +1056,32 @@ body {
 .filters-body {
   flex: 1 1 auto;
   overflow-y: auto;
-  padding: 16px 0 96px; /* ← deja espacio para el botón fijo */
+  padding: 0px 0 96px; /* ← deja espacio para el botón fijo */
   -webkit-overflow-scrolling: touch; /* ← mejora el scroll en iOS */
 }
 
 /* Sticky footer para CTA en el modal de filtros */
 .filters-footer {
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: #fff;
   padding: 16px;
   border-top: 1px solid #dee2e6;
-  z-index: 10;
+  z-index: 9999;
+  box-sizing: border-box;
+    display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: space-between; /* o center / end */
 }
 
+.filters-footer button {
+  flex: 1;
+}
+
+/* ========== APPLY FILTERS BUTTON ========== */
 .apply-filters {
   width: 100%;
   padding: 12px;
@@ -1084,15 +1091,37 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+  box-shadow: 0px 1px 6px 0px var(--Shadow-Transparency, rgba(153, 155, 156, 0.50));
 }
 
 .apply-filters:hover {
   background-color: #003DA6;
+  box-shadow: 0px 1px 6px 0px var(--Shadow-Transparency, rgba(153, 155, 156, 0.50));
 }
 
 .apply-filters:active {
   background-color: #00297C;
+  box-shadow: none;
+}
+
+.apply-filters:disabled {
+  background: #6C757D;
+  color: #D9E2E9;
+  box-shadow: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ===== 🧼 Collapsibles del modal sin fondo ===== */
+#filtersModal .collapsible {
+  background: transparent;
+}
+
+/* ===== 🧼 Collapsibles del sidebar sin fondo ===== */
+#filtersSidebar .collapsible {
+  background: transparent;
 }
 
 /* ===== FILTERS MODAL – CHECKBOXES ===== */
@@ -1113,7 +1142,6 @@ body {
   height: 16px;
   border-radius: 4px;
   border: 1px solid var(--Text-Primary, #212529);
-  background-color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1176,4 +1204,115 @@ body {
 .checkbox-text:has(input[type="checkbox"]:disabled) .checkbox-label,
 .checkbox-text:has(input[type="checkbox"]:disabled) .checkbox-count {
   color: var(--Disabled-Default, #6C757D);
+}
+
+.see-more-button,
+.apply-filters {
+  box-shadow: inset 0 -2px 0 0 #00297C;
+}
+
+.secondary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #6C757D; /* Secondary-Default */
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+  border: none;
+  box-shadow:
+    inset 0 -2px 0 0 #505356,
+    0px 1px 6px 0px var(--Shadow-Transparency, rgba(153, 155, 156, 0.50));
+}
+
+.secondary-button:hover {
+  background: #5D6268;
+  box-shadow:
+    inset 0 -2px 0 0 #505356,
+    0px 1px 6px 0px var(--Shadow-Transparency, rgba(153, 155, 156, 0.50));
+}
+
+.secondary-button:active {
+  background: #42474C;
+  box-shadow: none;
+}
+
+.secondary-button:disabled {
+  background: #495057;
+  color: #D9E2E9;
+  box-shadow: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* === FASE 1.2: Desktop Grid con Sidebar === */
+
+/* Comportamiento base (mobile-first) */
+.product-grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--Spacing-Medium-16px, 16px);
+}
+
+/* Oculta sidebar en mobile */
+#filtersSidebar {
+  display: none;
+}
+
+/* Desktop layout (≥ 992px) */
+@media (min-width: 992px) {
+  .product-grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px; /* puedes usar una variable si prefieres */
+    align-items: flex-start;
+  }
+
+  #filtersSidebar {
+    display: block;
+    height: auto;
+    position: sticky;
+    top: 16px;
+    align-self: flex-start;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+  }
+}
+
+/* Ocultar sidebar de filtros en mobile */
+@media (max-width: 991px) {
+  #filtersSidebar {
+    display: none !important;
+  }
+}
+
+/* 🔒 Fuerza los collapsibles de filtros (sidebar y modal) sin fondo */
+#filtersSidebar .collapsible,
+#filtersModal .collapsible {
+  background: transparent !important;
+  box-shadow: none !important;
+  min-width: auto !important;
+}
+
+/* ========== ANIMACIONES DE VISIBILIDAD: SIDEBAR ========== */
+.fade-in {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
