@@ -1184,7 +1184,7 @@ body {
 /* --- Textos --- */
 .checkbox-label,
 .checkbox-count {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 16px;
   color: var(--Text-Primary, #212529);
