@@ -27,7 +27,6 @@ slider.addEventListener("scroll", updateThumb); // en scroll
 window.addEventListener("resize", updateThumb); // en resize
 window.addEventListener("load", updateThumb);   // al cargar la página
 
-// Detectar tamaño del contenido
 function checkOverflowAndUpdateLayout() {
   const hasHorizontalScroll = slider.scrollWidth > slider.clientWidth;
 
