@@ -5,7 +5,7 @@ import {  renderDynamicFilters,
           applySelectedFilters, 
           getActiveTabFilters, 
           selectedFiltersByCategory 
-} from './js/plp.filters.js';
+} from './plp.filters.js';
 
 import {  setupCollapsibles, 
           toggleSidebar, 
@@ -13,13 +13,13 @@ import {  setupCollapsibles,
           setupClearFiltersButton, 
           initCheckboxListeners, 
           renderSidebar 
-} from './js/plp.ui.js';
+} from './plp.ui.js';
 
-import { initGrid, adjustGridLayout } from './js/plp.grid.js';
-import { initTabs } from './js/plp.tabs.js'; // ← ✅ NUEVO IMPORT
-import { initScrollbar } from './js/plp.scrollbar.js';
-import { renderProductSwatches } from './js/plp.swatches.js';
-import { adjustSidebarHeight } from './js/plp.sidebarHeight.js';
+import { initGrid, adjustGridLayout } from './plp.grid.js';
+import { initTabs } from './plp.tabs.js'; // ← ✅ NUEVO IMPORT
+import { initScrollbar } from './plp.scrollbar.js';
+import { renderProductSwatches } from './plp.swatches.js';
+import { adjustSidebarHeight } from './plp.sidebarHeight.js';
 
 function getTabFromURL() {
   const params = new URLSearchParams(window.location.search);
