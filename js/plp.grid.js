@@ -3,7 +3,7 @@
 
 // 🔁 Lleva el progreso de productos mostrados por categoría/tab
 export const visibleCardsByCategory = {};
-import { renderProductSwatches } from '.js/plp.swatches.js';
+import { renderProductSwatches } from './js/plp.swatches.js';
 
 
 function getCardsPerLoad() {
