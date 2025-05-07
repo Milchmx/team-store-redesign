@@ -1,8 +1,8 @@
 // plp.ui.js
 // Comportamiento visual: toggles, collapsibles, sidebar, aria
 
-import { isDesktop, renderDynamicFilters, selectedFiltersByCategory, applySelectedFilters } from '.js/plp.filters.js';
-import { adjustGridLayout } from '.js/plp.grid.js'; // 📐 Control de layout responsivo
+import { isDesktop, renderDynamicFilters, selectedFiltersByCategory, applySelectedFilters } from './js/plp.filters.js';
+import { adjustGridLayout } from './js/plp.grid.js'; // 📐 Control de layout responsivo
 
 // Buffer temporal para checkboxes seleccionados visualmente
 const visualFilterBuffer = {};
