@@ -826,3 +826,14 @@ body {
   opacity: 1;
 }
 
+.card-item {
+  position: relative;
+}
+
+.card-link-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  text-decoration: none;
+}
