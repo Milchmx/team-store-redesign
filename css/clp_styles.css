@@ -127,8 +127,10 @@ body {
     border-bottom: 1px solid transparent;
     padding-bottom: 1px;
     height: 20px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    box-sizing: border-box;
+    transition: border-bottom-color 0.2s ease, color 0.2s ease;
   }
 
   .breadcrumb a:hover,
