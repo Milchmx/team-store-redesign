@@ -20,6 +20,7 @@ import { initTabs } from './plp.tabs.js'; // ← ✅ NUEVO IMPORT
 import { initScrollbar } from './plp.scrollbar.js';
 import { renderProductSwatches } from './plp.swatches.js';
 import { adjustSidebarHeight } from './plp.sidebarHeight.js';
+import { initNavbarTabs } from './navbar.js';
 
 function getTabFromURL() {
   const params = new URLSearchParams(window.location.search);
@@ -93,6 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ← ✅ AJUSTAR ALTURA DEL SIDEBAR DESPUÉS DE CARGAR GRID Y SCROLLBAR
   adjustSidebarHeight();
+
+  // Inicializar tabs responsivos de navbar
+  initNavbarTabs(); // 👈 AGREGAR AQUÍ
 
   // Renderizar swatches de productos
   renderProductSwatches();
