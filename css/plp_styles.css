@@ -60,7 +60,8 @@ body {
   }
   
   
-/* ===== BREADCRUMBS ===== */
+  /* ===== BREADCRUMBS ===== */
+
   .breadcrumbs-container {
     display: flex;
     align-items: center;
@@ -69,7 +70,7 @@ body {
     width: 100%;
     box-sizing: border-box;
   }
-  
+
   @media (min-width: 768px) {
     .breadcrumbs-container {
       padding-left: 8px;
@@ -94,23 +95,25 @@ body {
       padding-right: 64px;
     }
   }
-  
+
   .breadcrumbs {
     display: flex;
     align-items: center;
     gap: 2px;
-    padding: 8px 2px 0 2px;
+    padding: 0 2px;
     flex-wrap: wrap;
+    height: 20px;
   }
-  
+
   .breadcrumb {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
     gap: 0;
+    height: 20px;
   }
-  
+
   .breadcrumb a {
     text-decoration: none;
     color: #495057;
@@ -122,13 +125,16 @@ body {
     transition: border-bottom-color 0.2s ease;
     border-bottom: 1px solid transparent;
     padding-bottom: 1px;
+    height: 20px;
+    display: flex;
+    align-items: center;
   }
-  
+
   .breadcrumb a:hover,
   .breadcrumb a:active {
     border-bottom-color: #212529;
   }
-  
+
   .breadcrumb span[aria-current="page"] {
     color: #495057;
     font-family: 'Roboto', sans-serif;
@@ -137,16 +143,20 @@ body {
     line-height: 16px;
     letter-spacing: 0.2px;
     cursor: default;
+    height: 20px;
+    display: flex;
+    align-items: center;
   }
-  
+
   .dash-container {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
     gap: 0;
+    height: 20px;
   }
-  
+
   .dash-container span {
     color: #495057;
     font-family: 'Roboto', sans-serif;
@@ -154,7 +164,10 @@ body {
     font-weight: 400;
     line-height: 16px;
     letter-spacing: 0.2px;
-    align-self: stretch;
+    align-self: center;
+    height: 20px;
+    display: flex;
+    align-items: center;
   }
   
   
