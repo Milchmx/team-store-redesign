@@ -1,0 +1,272 @@
+/* ===== PromoBar Base ===== */
+.promo-bar {
+  box-sizing: border-box;
+  height: 28px;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  background: var(--Focus-Alternative, #004F73);
+}
+
+.left-container {
+  display: flex;
+  padding: 0 4px;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start; /* 👈 Alineado a la izquierda */
+  justify-content: center; /* 👈 Alinea verticalmente (en este caso, al centro del eje vertical) */
+  gap: 8px;
+}
+
+.right-container {
+  display: flex;
+  padding: 0 4px;
+  flex: 1 0 0;
+  flex-direction: row;
+  justify-content: flex-end; /* ✅ Alinea contenido a la derecha en horizontal */
+align-items: center;       /* ✅ Centrado verticalmente */
+
+  gap: 8px;
+}
+
+/* Solo se muestra el botón de idioma en mobile */
+.right-container .locale-selector {
+  display: flex;
+  padding: 2px;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.locale-selector svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--Text-Static, #FFF);
+}
+
+/* ===== PromoBar Wording ===== */
+.promobar-wording {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;          /* ✅ se asegura de tomar la altura del padre */
+  flex: 0 1 auto;        /* ✅ evita que se estire o colapse accidentalmente */
+  overflow: hidden;
+}
+
+.promobar-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--Text-Static, #FFF);
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== Ocultar estructura desktop por ahora ===== */
+@media (max-width: 991px) {
+  .left-container > *,
+  .right-container > *:not(.locale-selector) {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  /* ===== Left Container (desktop) ===== */
+  .left-container {
+    display: flex;
+    width: 240px;
+    height: 20px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  /* ===== Right Container (desktop) ===== */
+  .right-container {
+    display: flex;
+    width: 240px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
+    /* ===== Mostrar accesos rápidos y ocultar icono global en desktop ===== */
+    .right-container > .shortcut-container,
+    .right-container > .vertical-divider {
+      display: flex;
+    }
+  
+    .right-container > .locale-selector {
+      display: none;
+    }
+
+  /* ===== Shortcut Container (accesos rápidos) ===== */
+  .shortcut-container {
+    display: flex;
+    padding: 0 2px;
+    align-items: center;
+    align-self: stretch;
+    cursor: pointer;
+  }
+
+  .shortcut-container:hover {
+    border-bottom: 1px solid var(--Text-Static, #FFF);
+  }
+
+  .shortcut-label {
+    width: 81px;
+    color: var(--Text-Static, #FFF);
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    text-align: center;
+  }
+
+  /* ===== Global Reviews Rate ===== */
+  .global-reviews-rate {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .global-reviews-rate .label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .label-text {
+    color: var(--Text-Static, #FFF);
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .star-icon {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ===== Vertical Divider ===== */
+  .vertical-divider {
+    width: 1px;
+    background-color: var(--Text-Static, #FFF);
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
+  /* ===== Locale Selector (desktop) ===== */
+  .locale-selector {
+    display: flex;
+    padding: 2px;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .locale-selector svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--Text-Static, #FFF);
+    display: block;
+  }
+
+  /* ===== Hover en elementos del Left Container (desktop) ===== */
+  .left-container .locale-selector:hover,
+  .global-reviews-rate:hover {
+    border-bottom: 1px solid var(--Text-Static, #FFF);
+    cursor: pointer;
+  }
+
+  /* ===== Active States (desktop & mobile) ===== */
+  /* Shortcut Actions */
+  .shortcut-container:active {
+    border-bottom: 1px solid #00297C;
+  }
+
+  .shortcut-container:active .shortcut-label {
+    color: #00297C;
+  }
+
+  /* Locale Selector (left & right) */
+  .locale-selector:active svg path {
+    fill: #00297C;
+  }
+
+  /* Global Reviews Rate */
+  .global-reviews-rate:active {
+    border-bottom: 1px solid #00297C;
+  }
+
+  .global-reviews-rate:active .label-text {
+    color: #00297C;
+  }
+
+  .global-reviews-rate:active .star-icon svg path {
+    fill: #00297C;
+  }
+
+  /* Estrellas con máscara en estado activo */
+  .global-reviews-rate:active .star-icon svg rect {
+    fill: #00297C;
+  }
+
+  .global-reviews-rate .star-icon svg rect {
+    fill: #FFC107; /* color por defecto */
+  }
+
+  
+}
+
+
+
+/* ===== Star Icons dentro de Global Reviews Rate ===== */
+.star-icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star-icon svg {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
