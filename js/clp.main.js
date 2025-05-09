@@ -1,5 +1,5 @@
 // clp.main.js
-import { initNavbarTabs } from '../../SGS PLP/js/navbar.js';
+import { initNavbarTabs } from './navbar.js';
 import './clp_carousel.js';
 import './clp_collapsibles.js';
 
