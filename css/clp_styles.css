@@ -101,7 +101,7 @@ body {
     display: flex;
     align-items: center;
     gap: 2px;
-    padding: 16px 2px 0 2px; /* top: 16px, right: 2px, bottom: 0, left: 2px */
+    padding: 8px 2px 0 2px; /* top: 16px, right: 2px, bottom: 0, left: 2px */
     flex-wrap: wrap;
   }
 
