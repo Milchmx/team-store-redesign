@@ -70,7 +70,6 @@ body {
     padding: 4px 8px;
     width: 100%;
     box-sizing: border-box;
-    margin-top: 16px;
   }
 
   @media (min-width: 768px) {
@@ -102,7 +101,7 @@ body {
     display: flex;
     align-items: center;
     gap: 2px;
-    padding: 0 2px;
+    padding: 16px 2px 0 2px; /* top: 16px, right: 2px, bottom: 0, left: 2px */
     flex-wrap: wrap;
     height: 20px;
   }
