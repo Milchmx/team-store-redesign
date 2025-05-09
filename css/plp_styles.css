@@ -1319,6 +1319,15 @@ body {
   min-width: auto !important;
 }
 
+/* ========== bottom padding sidebar & modal ========== */
+#filtersModal .filters-body {
+  padding-bottom: 96px;
+}
+
+#filtersSidebar .filters-body {
+  padding-bottom: 0;
+}
+
 /* ========== ANIMACIONES DE VISIBILIDAD: SIDEBAR ========== */
 .fade-in {
   opacity: 1;
