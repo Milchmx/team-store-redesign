@@ -2,7 +2,7 @@
 .promo-bar {
   box-sizing: border-box;
   height: 28px;
-  padding: 4px;
+  padding: 4px 12px;
   display: flex;
   justify-content: center;
   align-items: center;
