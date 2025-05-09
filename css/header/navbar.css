@@ -1,0 +1,225 @@
+/* ===== Navbar Wrapper ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 12px;
+    background: var(--Surface-Base, #FFF);
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* ===== Left Container (Mobile) ===== */
+  .navbar-left-container {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  
+  /* ===== Logo Container ===== */
+    .icon-svg-logo {
+        display: flex;
+        height: 36px;
+        padding: 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+        cursor: pointer; /* 👈 Por si se vuelve clicable */
+        border-bottom: 1px solid transparent; /* evita el salto */
+    }
+    
+    .icon-svg-logo svg {
+        width: 84px;
+        height: 32px;
+        flex-shrink: 0;
+        fill: var(--Text-Primary, #212529);
+        transition: fill 0.2s ease;
+    }
+    
+    /* Estado Hover */
+    .icon-svg-logo:hover {
+        border-bottom: 1px solid var(--Primary-Hover, #003DA6);
+    }
+    
+    .icon-svg-logo:hover svg {
+        fill: var(--Primary-Hover, #003DA6);
+    }
+    
+    /* Estado Active */
+    .icon-svg-logo:active {
+        border-bottom: 1px solid var(--Primary-Active, #00297C);
+    }
+    
+    .icon-svg-logo:active svg {
+        fill: var(--Primary-Active, #00297C);
+    }
+  
+  
+  /* ===== Right Container (Mobile) ===== */
+  .navbar-right-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+/* ===== Icon Container (Regular) ===== */
+.icon-regular-container {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    cursor: pointer;
+    border-bottom: 1px solid transparent; /* evita salto */
+    color: var(--Text-Primary, #212529);
+  }
+  
+  .icon-regular-container svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: var(--Text-Primary, #212529);
+    transition: fill 0.2s ease;
+  }
+  
+  /* Específico para icono "menu" */
+  .icon-regular-container.menu-icon svg {
+    height: 12px;
+  }
+  
+  /* ===== Estados Hover y Active (universales) ===== */
+  .icon-regular-container:hover {
+    border-bottom: 1px solid var(--Primary-Hover, #003DA6);
+    color: var(--Primary-Hover, #003DA6);
+  }
+  
+  .icon-regular-container:hover svg {
+    fill: var(--Primary-Hover, #003DA6);
+  }
+  
+  .icon-regular-container:active {
+    border-bottom: 1px solid var(--Primary-Active, #00297C);
+    color: var(--Primary-Active, #00297C);
+  }
+  
+  .icon-regular-container:active svg {
+    fill: var(--Primary-Active, #00297C);
+  }
+  
+
+/* Mobile: hasta 991px */
+@media (max-width: 991px) {
+    .navbar-middle-container {
+      display: none !important;
+    }
+  }
+  
+/* Desktop: desde 992px */
+@media (min-width: 992px) {
+    .navbar-middle-container {
+      display: flex;
+      flex: 1 1 auto;
+      min-width: 0;
+      height: 36px;
+      padding: 4px 0;
+      justify-content: flex-start; /* ← Cambiado de 'center' a 'flex-start' */
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .navbar-tabs-dynamic {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 8px;
+      margin-left: auto;      /* ← Empuja los tabs hacia la derecha */
+      overflow: hidden;
+      min-width: 0;
+      white-space: nowrap;
+      flex: 0 1 auto;          /* ← Solo ocupa lo necesario */
+    }
+  
+    .navbar-tabs-static {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .category-tab {
+      display: flex;
+      padding: 0 4px;
+      align-items: center;
+      gap: 4px;
+      height: 28px;
+      cursor: pointer;
+      flex-shrink: 0; /* ← Impide que se reduzcan al hacer resize */
+      border-bottom: 1px solid transparent; /* ← evita el salto */
+    }
+  
+    .category-tab .label {
+      font-family: Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--Text-Primary, #212529);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 120px;
+    }
+  
+    .icon-small-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .icon-small-container svg {
+      display: block;
+    }
+  
+    .see-all-tab {
+      padding: 0 4px;
+      height: 28px;
+    }
+  
+    .see-all-tab .icon-small-container.empty {
+      padding: 6px;
+    }
+  
+    .navbar .vertical-divider {
+      width: 1px;
+      height: 30px;
+      background-color: var(--Text-Primary, #212529);
+      opacity: 0.2;
+    }
+
+    .navbar-right-container .menu-icon {
+        display: none !important;
+      }
+
+      .category-tab:hover {
+        border-bottom: 1px solid var(--Primary-Hover, #003DA6);
+      }
+      
+      .category-tab:hover .label,
+      .category-tab:hover .icon-small-container svg {
+        color: #003DA6;
+        fill: #003DA6;
+      }
+      
+      .category-tab:active {
+        border-bottom: 1px solid var(--Primary-Active, #00297C);
+      }
+      
+      .category-tab:active .label,
+      .category-tab:active .icon-small-container svg {
+        color: #00297C;
+        fill: #00297C;
+      }
+  
+  }
