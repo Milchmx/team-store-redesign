@@ -7,7 +7,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/clp_styles.css" />
     <link rel="stylesheet" href="css/header/promobar.css" />
-  <link rel="stylesheet" href="css/header/navbar.css" />
+    <link rel="stylesheet" href="css/header/navbar.css" />
+    <script>
+        (function (m, a, z, e) {
+          var s, t;
+          try {
+            t = m.sessionStorage.getItem('maze-us');
+          } catch (err) {}
+        
+          if (!t) {
+            t = new Date().getTime();
+            try {
+              m.sessionStorage.setItem('maze-us', t);
+            } catch (err) {}
+          }
+        
+          s = a.createElement('script');
+          s.src = z + '?apiKey=' + e;
+          s.async = true;
+          a.getElementsByTagName('head')[0].appendChild(s);
+          m.mazeUniversalSnippetApiKey = e;
+        })(window, document, 'https://snippet.maze.co/maze-universal-loader.js', '59fefb8b-3a95-4613-ac73-77589f9f4e80');
+    </script>
 </head>
 <body>
     <header class="header">
