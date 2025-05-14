@@ -223,11 +223,32 @@ export function applySelectedFilters() {
   // Reiniciar contador y volver a mostrar primer lote
   if (category) {
     visibleCardsByCategory[category] = 0;
+    
+    // Mostrar u ocultar el mensaje de "no resultados"
+    const noResultsMessage = document.getElementById("noResultsMessage");
+    if (noResultsMessage) {
+      const hasVisibleProducts = filtered.length > 0;
+      noResultsMessage.style.display = hasVisibleProducts ? "none" : "flex";
+    }
+
     showNextBatch();
     renderProductSwatches();
 
   }
 }
+
+// 🔁 Duplica la acción del botón Clear Filters para el escenario "0 results"
+// Al hacer clic en el botón dentro del mensaje de error, se dispara el botón real del modal
+document.addEventListener("DOMContentLoaded", () => {
+  const clearFiltersDuplicate = document.getElementById("clearFiltersDuplicate");
+  const clearFiltersReal = document.getElementById("clearFilters");
+  if (clearFiltersDuplicate && clearFiltersReal) {
+    clearFiltersDuplicate.addEventListener("click", () => {
+      clearFiltersReal.click();
+    });
+  }
+});
+
 
 // 📦 Obtiene el objeto de filtros para el tab actualmente seleccionado
 export function getActiveTabFilters() {
@@ -235,4 +256,3 @@ export function getActiveTabFilters() {
   const category = activeTab?.dataset.category;
   return selectedFiltersByCategory[category];
 }
-
