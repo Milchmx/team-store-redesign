@@ -208,7 +208,6 @@ align-items: center;       /* ✅ Centrado verticalmente */
 
   /* ===== Hover en elementos del Left Container (desktop) ===== */
   .left-container .locale-selector:hover,
-  .left-container .locale-selector:active,
   .global-reviews-rate:hover {
     border-bottom: 1px solid var(--Text-Static, #FFF);
     cursor: pointer;
@@ -227,6 +226,9 @@ align-items: center;       /* ✅ Centrado verticalmente */
   /* Locale Selector (left & right) */
   .locale-selector:active svg path {
     fill: #00297C;
+  }
+
+  .left-container .locale-selector:active {
     border-bottom: 1px solid #00297C;
   }
 
@@ -252,7 +254,7 @@ align-items: center;       /* ✅ Centrado verticalmente */
     fill: #FFC107; /* color por defecto */
   }
 
-  
+
 }
 
 
